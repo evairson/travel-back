@@ -15,13 +15,12 @@ INSERT INTO follows (following_user_id, followed_user_id) VALUES
 (5, 2);
 
 -- ==== POSTS ====
-INSERT INTO posts (title, creator_id, content, distance, co2, time_travel, time_transport, images) VALUES
-('Tour à vélo dans les Landes', 1, 'Découverte des pins maritimes et de l’océan.', 85, 10.1, '5h', '1h', ARRAY['https://picsum.photos/400?random=30', 'https://picsum.photos/400?random=35']),
-('Randonnée au Mont Ventoux', 2, 'Un défi sportif et une vue panoramique.', 25, 3.4, '7h', '45min', ARRAY['https://picsum.photos/400?random=36']),
-('Voyage en train en Italie', 3, 'Parcours de Milan à Rome en train rapide.', 580, 30.8, '6h', '4h', ARRAY['https://picsum.photos/400?random=37']),
-('Camping durable en Corse', 4, 'Séjour en pleine nature avec des éco-gestes.', 40, 6.5, '3 jours', '2h', ARRAY['https://picsum.photos/400?random=38']),
-('Balade en kayak en Norvège', 5, 'Exploration des fjords sous le soleil d’été.', 70, 8.9, '8h', '1h', ARRAY['https://picsum.photos/400?random=39']);
-
+INSERT INTO posts (title, creator_id, content, distance, co2, time_travel, time_travel_unit, time_transport, images) VALUES
+('Tour à vélo dans les Landes', 1, 'Découverte des pins maritimes et de l’océan.', 85, 10.1, 5, 'hours', '1h', ARRAY['https://picsum.photos/400?random=30', 'https://picsum.photos/400?random=35']),
+('Randonnée au Mont Ventoux', 2, 'Un défi sportif et une vue panoramique.', 25, 3.4, 7, 'hours', '45min', ARRAY['https://picsum.photos/400?random=36']),
+('Voyage en train en Italie', 3, 'Parcours de Milan à Rome en train rapide.', 580, 30.8, 6, 'hours', '4h', ARRAY['https://picsum.photos/400?random=37']),
+('Camping durable en Corse', 4, 'Séjour en pleine nature avec des éco-gestes.', 40, 6.5, 3, 'days', '2h', ARRAY['https://picsum.photos/400?random=38']),
+('Balade en kayak en Norvège', 5, 'Exploration des fjords sous le soleil d’été.', 70, 8.9, 8, 'hours', '1h', ARRAY['https://picsum.photos/400?random=39']);
 -- ==== SPOTS ====
 INSERT INTO spots (post_id, begin, end, type_transport, time_journey, distance, cost) VALUES
 (1, 'Hossegor', 'Capbreton', 'bike', 90, 30, 5),

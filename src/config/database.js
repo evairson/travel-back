@@ -1,6 +1,5 @@
 // src/config/database.js
 import { Pool } from "pg";
-import "dotenv/config"; 
 
 // postgres://username:password@localhost:5432/mydatabase
 const connectionString = process.env.DATABASE_URL;

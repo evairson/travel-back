@@ -10,6 +10,11 @@ export async function findByEmail(email) {
     return result.rows[0];
 }
 
+export async function findById(id) {
+  const result = await pool.query("SELECT id, pseudo, url_avatar FROM users WHERE id = $1", [id]);
+  return result.rows[0];
+}
+
 export async function create(email, passwordHash) {
   const result = await pool.query(
     "INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email, created_at",

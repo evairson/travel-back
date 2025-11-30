@@ -27,19 +27,21 @@ CREATE TABLE follows (
   FOREIGN KEY (following_user_id) REFERENCES users(id),
   FOREIGN KEY (followed_user_id) REFERENCES users(id)
 );
+
 -- Posts de voyage
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   creator_id INT NOT NULL REFERENCES users(id),
   created_at TIMESTAMP DEFAULT NOW(),
-  content TEXT,
-  time_travel TEXT,
+  content TEXT NOT NULL,
+  time_travel INTEGER NOT NULL,
+  time_travel_unit TEXT NOT NULL,
   distance DOUBLE PRECISION,
   time_transport TEXT,
   map_image TEXT,
   co2 DOUBLE PRECISION,
-  images TEXT[]
+  images TEXT[] NOT NULL
 );
 
 -- Spots associés à un post

@@ -13,9 +13,7 @@ router.post("/", (req, res) => {
 });
 
 // GET /api/users/id/:id → récupérer un utilisateur par ID
-router.get("/id/:id", (req, res) => {
-  // Logique pour récupérer un utilisateur par ID
-});
+router.get("/id/:id", userController.getUserById);
 
 // GET /api/users/email/:email → récupérer un utilisateur par email
 router.get("/email/:email", userController.getUserByEmail);

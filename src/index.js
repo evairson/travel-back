@@ -1,7 +1,6 @@
 // src/index.js
    
 import express, { json } from "express";
-import pool from "./config/database.js"; // Connexion Postgres
 import userRoutes from "./routes/user.routes.js"; 
 import postRoutes from "./routes/post.routes.js";
 import "dotenv/config";
@@ -26,7 +25,7 @@ app.get("/api/health", async (req, res) => {
 });
 
 // Démarrer le serveur
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
 });

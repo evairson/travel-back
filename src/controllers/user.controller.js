@@ -1,5 +1,5 @@
 // src/controllers/user.controller.js
-import {findByEmail, findAll} from "../repositories/user.repository.js";
+import {findByEmail, findAll, findById} from "../repositories/user.repository.js";
 
 /**
  * GET /api/users
@@ -19,6 +19,16 @@ export async function getAllUsers(req, res) {
 export async function getUserByEmail(req, res) {
   try {
     const user = await findByEmail(req.params.email);
+    if (!user) return res.status(404).json({ error: "Utilisateur non trouvé" });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
+export async function getUserById(req, res) {
+  try {
+    const user = await findById(req.params.id);
     if (!user) return res.status(404).json({ error: "Utilisateur non trouvé" });
     res.json(user);
   } catch (err) {
